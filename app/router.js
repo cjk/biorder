@@ -6,6 +6,10 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.resource('items', function() {
+    // no nested routes so far
+  });
+  this.route('items.new');
 });
 
 export default Router;
