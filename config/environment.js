@@ -19,6 +19,12 @@ module.exports = function(environment) {
     }
   };
 
+  // This line is avoid errors from the edit-with-emacs extension (using inline
+  // styles) to cause console-errors in Chrome (CjK 05.12.2014):
+  ENV.contentSecurityPolicy = {
+    'style-src': "'self' 'unsafe-inline'"
+  };
+
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
     ENV.APP.LOG_ACTIVE_GENERATION = true;
