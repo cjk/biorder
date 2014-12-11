@@ -5,7 +5,7 @@ module.exports = function(environment) {
     modulePrefix: 'biorder',
     environment: environment,
     baseURL: '/',
-    locationType: 'auto',
+    locationType: 'hash',
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
@@ -16,13 +16,18 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
-    }
-  };
+    },
 
-  // This line is avoid errors from the edit-with-emacs extension (using inline
-  // styles) to cause console-errors in Chrome (CjK 05.12.2014):
-  ENV.contentSecurityPolicy = {
-    'style-src': "'self' 'unsafe-inline'"
+    // This line is avoid errors from the edit-with-emacs extension (using inline
+    // styles) to cause console-errors in Chrome (CjK 05.12.2014):
+    contentSecurityPolicy: {
+      'style-src': "'self' 'unsafe-inline'"
+    },
+
+    cordova: {
+      rebuildOnChange: false,
+      emulate: false
+    }
   };
 
   if (environment === 'development') {
@@ -36,7 +41,7 @@ module.exports = function(environment) {
   if (environment === 'test') {
     // Testem prefers this...
     ENV.baseURL = '/';
-    ENV.locationType = 'none';
+    ENV.locationType = 'auto';
 
     // keep test console output quieter
     ENV.APP.LOG_ACTIVE_GENERATION = false;

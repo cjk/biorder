@@ -1,1 +1,13 @@
-<h3>Please describe your item here:</h3>
+<div class="container">
+  <h3>Create a new item:</h3>
+
+  <form role="form" {{action "createItem" on="submit"}}>
+    <div class="form-group">
+      <label for="inputName" class="sr-only">Item name</label>
+      {{input name=name value=name class="form-control" placeholder="Item name" type="text"}}
+    </div>
+
+    <button type="submit" class="btn btn-lg btn-primary">Save</button>
+  </form>
+
+</div>

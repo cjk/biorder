@@ -9,7 +9,8 @@
   "scripts": {
     "start": "ember server",
     "build": "ember build",
-    "test": "ember test"
+    "test": "ember test",
+    "build-cdv": "env PATH=$PATH:/home/cjk/.npm/lib/node_modules/ember-cli/bin ember cordova:build --platform=android"
   },
   "repository": "",
   "engines": {
@@ -23,6 +24,7 @@
     "ember-cli": "0.1.4",
     "ember-cli-bootstrap": "0.0.12",
     "ember-cli-content-security-policy": "0.3.0",
+    "ember-cli-cordova": "^0.0.13",
     "ember-cli-dependency-checker": "0.0.6",
     "ember-cli-esnext": "0.1.1",
     "ember-cli-ic-ajax": "0.1.1",
