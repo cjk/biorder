@@ -1,0 +1,26 @@
+{
+  "name": "biorder-server",
+  "version": "0.0.1",
+  "description": "REST-API server for the biorder-app",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node tests/runner"
+  },
+  "author": "Claus Klingberg <cjk@pobox.com>",
+  "dependencies": {
+    "URIjs": "^1.14.1",
+    "body-parser": "^1.9.2",
+    "express": "^4.10.1",
+    "glob": "^4.2.1",
+    "lodash": "^2.4.1",
+    "mongoose": "^3.8.20",
+    "rsvp": "^3.0.14"
+  },
+  "devDependencies": {
+    "chai": "^1.10.0",
+    "chai-as-promised": "^4.1.1",
+    "mocha": "^2.0.1",
+    "superagent": "^0.21.0"
+  }
+}
