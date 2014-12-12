@@ -3,6 +3,7 @@
 module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'biorder',
+    firebase_instance: 'biorder',
     environment: environment,
     baseURL: '/',
     locationType: 'hash',
@@ -21,6 +22,8 @@ module.exports = function(environment) {
     // This line is avoid errors from the edit-with-emacs extension (using inline
     // styles) to cause console-errors in Chrome (CjK 05.12.2014):
     contentSecurityPolicy: {
+      'connect-src': "'self' wss://*.firebaseio.com",
+      'script-src': "'self' 'unsafe-eval' https://cdn.firebase.com https://*.firebaseio.com http://localhost:35729",
       'style-src': "'self' 'unsafe-inline'"
     },
 
