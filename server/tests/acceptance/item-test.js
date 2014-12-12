@@ -1,3 +1,4 @@
+var RSVP = require('rsvp');
 var superagent = require('superagent');
 var expect = require('chai').expect;
 
@@ -7,17 +8,39 @@ describe('express rest api server', function(){
   var id;
 
   before(function(done) {
-    mongoose.connect('mongodb://localhost/biorder', function(err) {
-      if (err) {
-        done(err);
-      }
-      // Clear database before running tests (!!!)
-      mongoose.connection.db.dropDatabase();
-      done();
+    var connectDB = function() {
+      var promise = new RSVP.Promise(function(resolve, reject) {
+        mongoose.connect('mongodb://localhost/biorder', function(err) {
+          if (err) {
+            reject(err);
+            return done();
+          }
+          return resolve(this);
+        });
+      });
+      return promise;
+    };
+
+    var dropDB = function(conn) {
+      var promise = new RSVP.Promise(function(resolve, reject) {
+        conn.db.dropDatabase(function(err) {
+          if (err) {
+            console.log('Can not drop db: ' + err);
+            return reject(err);
+          }
+          resolve(this);
+        });
+      });
+      return promise;
+    };
+
+    connectDB().then(function(conn) {
+      return dropDB(conn);
     });
+    done();
   });
 
-  it('post object', function(done){
+  it('post object', function(done) {
     superagent.post('http://localhost:8088/api/items')
       .send({ name: 'Cucumber',
               measuredIn: 'slices'
