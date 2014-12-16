@@ -7,10 +7,9 @@ export default Ember.Route.extend({
 
   actions: {
     deleteItem: function(item) {
-      console.log('Deleting item:');
-      console.log(item);
-
-      item.destroyRecord();
+      item.destroyRecord().then(function() {
+        console.log('item was deleted!');
+      });
     }
   }
 });

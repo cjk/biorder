@@ -1,12 +1,13 @@
 <h3>Your list of items:</h3>
 
-<ul class="media-list">
-  {{#each item in model}}
-    <li>
+<div class="container-fluid">
+  <div class="row">
+    {{#each item in model}}
       <label>{{item.name}}</label>
-      <button {{action 'deleteItem' this bubbles=false}} class="btn btn-xs" type="button">x</button>
-    </li>
-  {{/each}}
-</ul>
+      <label>{{item.measuredIn}}</label>
+      <button {{action 'deleteItem' item bubbles=false}} class="btn btn-xs" type="button">x</button>
+    {{/each}}
+  </div>
+</div>
 
 {{#link-to 'items.new'}}Create new item{{/link-to}}

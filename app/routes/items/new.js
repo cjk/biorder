@@ -2,17 +2,17 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
 
+  model: function() {
+    return this.get('store').createRecord('item');
+  },
+
   actions: {
     createItem: function() {
-      var name = this.get('name');
 
-      var item = this.store.createRecord('item', {
-        name: name
-      });
-
-      item.save();
-      Ember.Logger.debug("Saved an item:");
-      Ember.Logger.debug(item);
+      var newItem = this.get('currentModel');
+      Ember.Logger.debug("Saving an item:");
+      Ember.Logger.debug(newItem);
+      newItem.save();
 
       this.transitionTo('items');
     }
