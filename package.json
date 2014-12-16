@@ -38,6 +38,7 @@
     "glob": "^4.0.5"
   },
   "dependencies": {
+    "ember-cli-material-design-icons": "^0.2.0",
     "emberfire": "^1.3.1"
   }
 }
