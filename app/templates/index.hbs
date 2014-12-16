@@ -1,0 +1,9 @@
+<h3>Choose items to order:</h3>
+
+<ul class="small-block-grid-3 medium-block-grid-6 large-block-grid-10">
+  {{#each item in model}}
+    <li>
+      <p>{{item.name}} - {{item.measuredIn}}</p>
+    </li>
+  {{/each}}
+</ul>

@@ -1,11 +1,12 @@
 <h3>Your list of items:</h3>
 
-<ul class="small-block-grid-3 medium-block-grid-6 large-block-grid-10">
+<ul>
   {{#each item in model}}
     <li>
-      <label>{{item.name}}</label>
-      <label>{{item.measuredIn}}</label>
-      <button {{action 'deleteItem' item bubbles=false}} class="button tiny" type="button">x</button>
+      <p>
+        {{item.name}} - {{item.measuredIn}}
+        <a href="#" {{action 'deleteItem' item bubbles=false}} class="button tiny secondary"><i class="md md-delete md-2x"></i></a>
+      </p>
     </li>
   {{/each}}
 </ul>
