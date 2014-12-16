@@ -1,13 +1,13 @@
 <h3>Your list of items:</h3>
 
-<div class="container-fluid">
-  <div class="row">
-    {{#each item in model}}
+<ul class="small-block-grid-3 medium-block-grid-6 large-block-grid-10">
+  {{#each item in model}}
+    <li>
       <label>{{item.name}}</label>
       <label>{{item.measuredIn}}</label>
-      <button {{action 'deleteItem' item bubbles=false}} class="btn btn-xs" type="button">x</button>
-    {{/each}}
-  </div>
-</div>
+      <button {{action 'deleteItem' item bubbles=false}} class="button tiny" type="button">x</button>
+    </li>
+  {{/each}}
+</ul>
 
 {{#link-to 'items.new'}}Create new item{{/link-to}}
