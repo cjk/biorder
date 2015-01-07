@@ -10,7 +10,8 @@
     "start": "ember server",
     "build": "ember build",
     "test": "ember test",
-    "build-cdv": "env PATH=$PATH:/home/cjk/.npm/lib/node_modules/ember-cli/bin ember cordova:build --platform=android"
+    "cdv-build": "env PATH=$PATH:/home/cjk/.npm/lib/node_modules/ember-cli/bin ember cordova:build --platform=android",
+    "cdv-emulate": "cd cordova && cordova emulate android"
   },
   "repository": "",
   "engines": {

@@ -2,10 +2,13 @@
 
 var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
+// Configures ember-cli-foundation-sass:
+// Includes modernizr, fastclick and the full foundation.js with all modules
 var app = new EmberApp({
   'foundation-sass': {
-    'fastclick': true
-    // 'foundationJs': 'all'
+    'modernizr': true,
+    'fastclick': true,
+    'foundationJs': 'all'
   }
 });
 

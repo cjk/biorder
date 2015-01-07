@@ -1,0 +1,9 @@
+<h3>Start new order:</h3>
+
+<ul class="small-block-grid-3 medium-block-grid-6 large-block-grid-8">
+  {{#each item in availableItems}}
+    <li class="item">
+      <button {{action 'addToOrder'}} class="item">{{item.name}}</button>
+    </li>
+  {{/each}}
+</ul>
