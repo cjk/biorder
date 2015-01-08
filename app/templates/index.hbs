@@ -1,9 +1,9 @@
 <h3>Your history:</h3>
 
 <ul>
-  {{#each order in model}}
+  {{#each order in controller}}
     <li>
-      <p class="order">Order from [{{order.createdAt}}]</p>
+      <p class="order">Order from [{{order.createdAt}}] with {{order.items.length}} items</p>
     </li>
   {{/each}}
 </ul>

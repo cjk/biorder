@@ -15,7 +15,6 @@ export default Ember.Route.extend({
     this.store.find('item').then(resolve, reject);
 
     function resolve(items) {
-      console.log('got some items: ' + items.get('length'));
       self.get('controller').set('availableItems', items);
     }
     function reject(error) {
@@ -25,8 +24,10 @@ export default Ember.Route.extend({
   },
 
   actions: {
-    addToOrder: function() {
-      alert('Adding item to order!');
+    addToOrder: function(item) {
+      var order = this.get('controller.model');
+      order.get('items').pushObject(item);
+      alert('Item added!');
     }
   }
 });
