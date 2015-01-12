@@ -26,8 +26,9 @@ export default Ember.Route.extend({
   actions: {
     addToOrder: function(item) {
       var order = this.get('controller.model');
+
+      console.log('Adding item <' + item.get('name') + '> to order.');
       order.get('items').pushObject(item);
-      alert('Item added!');
     }
   }
 });

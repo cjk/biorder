@@ -1,5 +1,11 @@
 <h3>Start new order:</h3>
 
+<ol>
+  {{#each item in controller.model.items}}
+    <li>{{item.name}}</li>
+  {{/each}}
+</ol>
+
 <ul class="small-block-grid-3 medium-block-grid-6 large-block-grid-8">
   {{#each item in availableItems}}
     <li class="item">
