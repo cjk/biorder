@@ -7,10 +7,11 @@ var Router = Ember.Router.extend({
 
 Router.map(function() {
   this.resource('orders', function() {
+    this.route('edit', { path: "/:order_id" });
     this.route('new');
   });
   this.resource('items');
-  this.route('items.new');
+  this.route('item.new');
 });
 
 export default Router;

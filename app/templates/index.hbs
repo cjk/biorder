@@ -3,7 +3,7 @@
 <ul>
   {{#each order in controller}}
     <li>
-      <p class="order">Order from [{{order.createdAt}}] with {{order.items.length}} items</p>
+      <p class="order">Order from [{{order.createdAt}}] with {{order.lineitems.length}} lineitems {{#link-to 'orders.edit' order}}<i class="md md-edit"></i>{{/link-to}}</p>
     </li>
   {{/each}}
 </ul>
