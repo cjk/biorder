@@ -1,5 +1,3 @@
-import Ember from 'ember';
+import OrderBase from './base';
 
-export default Ember.Controller.extend({
-  availableItems: []            // all grocery-items to choose from
-});
+export default OrderBase.extend({});
