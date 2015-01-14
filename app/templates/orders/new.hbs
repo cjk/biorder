@@ -1,15 +1,13 @@
 <h3>Start new order:</h3>
 
-<ol>
+<ul>
   {{#each lineitem in controller.model.lineitems}}
-    <li>{{lineitem.amount}} {{lineitem.item.measuredIn}} {{lineitem.item.name}}</li>
-  {{/each}}
-</ol>
-
-<ul class="small-block-grid-3 medium-block-grid-6 large-block-grid-8">
-  {{#each item in availableItems}}
-    <li class="item">
-      <button {{action 'addToOrder' item}} class="item">{{item.name}}</button>
+    <li>
+      <span>{{lineitem.amount}} {{lineitem.item.measuredIn}} {{lineitem.item.name}}</span>
+      <!-- <button class="button secondary" {{action 'removeFromOrder' lineitem}}><i class="md md-highlight-remove"></i></button> -->
+      <i {{action 'removeFromOrder' lineitem}} class="clickable md md-highlight-remove"></i>
     </li>
   {{/each}}
 </ul>
+
+{{partial "items/available-items-grid"}}

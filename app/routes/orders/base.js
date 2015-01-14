@@ -3,6 +3,8 @@ import Ember from 'ember';
 // Abstract base route with shared functionality for new- and edit-behaviour.
 export default Ember.Route.extend({
 
+  controllerName: 'OrdersEdit',
+
   afterModel: function() {
     var self = this;
 
@@ -33,6 +35,13 @@ export default Ember.Route.extend({
       console.log('Adding item <' + item.get('name') + '> to current order.');
       lineitem.set('item', item);
       order.get('lineitems').pushObject(lineitem);
+    },
+    removeFromOrder: function(lineitem) {
+      var order = this.get('controller.model');
+
+      console.log('Removing item <' + lineitem.get('item.name') + '> from current order.');
+      order.get('lineitems').removeObject(lineitem);
     }
+
   }
 });

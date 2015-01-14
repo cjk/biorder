@@ -1,3 +1,3 @@
 import OrderBase from './base';
 
-export default OrderBase.extend({});
+export default OrderBase.extend();
