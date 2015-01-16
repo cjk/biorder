@@ -4,10 +4,11 @@
   {{#each lineitem in controller.model.lineitems}}
     <li>
       <span>{{lineitem.amount}} {{lineitem.item.measuredIn}} {{lineitem.item.name}}</span>
-      <!-- <button class="button secondary" {{action 'removeFromOrder' lineitem}}><i class="md md-highlight-remove"></i></button> -->
       <i {{action 'removeFromOrder' lineitem}} class="clickable md md-highlight-remove"></i>
     </li>
   {{/each}}
 </ul>
 
 {{partial "items/available-items-grid"}}
+
+<button {{action 'save' this}} class="button">Save</button>

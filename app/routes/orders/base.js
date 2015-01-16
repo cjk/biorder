@@ -41,6 +41,17 @@ export default Ember.Route.extend({
 
       console.log('Removing item <' + lineitem.get('item.name') + '> from current order.');
       order.get('lineitems').removeObject(lineitem);
+    },
+
+    save: function(order) {
+      var self = this;
+
+      order.save().then(function() {
+        self.transitionTo('/');
+      }, function(error) {
+        console.error('Save failed', 'Sorry, but saving your order failed. Please try again in a moment.');
+        Ember.Logger.error(error);
+      });
     }
 
   }
